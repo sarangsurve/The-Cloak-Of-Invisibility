@@ -44,4 +44,13 @@ while (cap.isOpened()):
 	cv2.imshow("Image", final_output)
 	k = cv2.waitKey(10)
 	if k == 27:
+		print('ESC pressed')
 		break
+	elif k == 191:
+		print('F2 pressed\nCapturing Background')
+		for i in range(60):
+			return_val, background = cap.read()
+			if return_val == False :
+				continue
+		background = np.flip(background, axis = 1)
+		print('Background Captured')
