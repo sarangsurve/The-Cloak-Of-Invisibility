@@ -54,6 +54,8 @@ while (cap.isOpened()):
 	img = cv2.addWeighted(res1, 1, res2, 1, 0)
 	if is_recording:
 		out.write(img)
+		img = cv2.circle(img, center_coordinates, radius, color, thickness)
+		cv2.putText(img, f'REC', (int(wCam - 150), int(radius + 45)), cv2.FONT_HERSHEY_PLAIN, 3, (0, 0, 255), 3)
 	cv2.imshow(window_name, img)
 	k = cv2.waitKey(10)
 	if k == 27:
