@@ -70,12 +70,12 @@ while (cap.isOpened()):
 		background = np.flip(background, axis = 1)
 		print('Background Captured')
 	elif k == 115 and is_recording:
-		print('R pressed')
+		print('S pressed')
 		is_recording = False
 		out.release()
 		print('Recording Stopped')
 	elif k == 114 and not is_recording:
-		print('S pressed')
+		print('R pressed')
 		is_recording = True
 		recording_filename = "output" + str(datetime.now().isoformat().split(".")[0].replace(":","-")) + ".avi"
 		fourcc = cv2.VideoWriter_fourcc(*'XVID')
